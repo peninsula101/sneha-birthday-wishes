@@ -1,0 +1,214 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+
+  text-align: center;
+
+  width: 400px;
+}
+
+/* photo container */
+.photo-container {
+  position: relative;
+}
+
+/* photo */
+.main-photo {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+
+  border-radius: 15px;
+}
+
+/* glowing text */
+.glow-text {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #ff4081,
+    0 0 20px #ff4081,
+    0 0 40px #ff4081;
+
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #ff4081;
+  }
+  to {
+    text-shadow:
+      0 0 20px #fff,
+      0 0 40px #ff4081;
+  }
+}
+
+/* cake animation */
+.cake-area {
+  margin-top: 20px;
+}
+
+.cake {
+  font-size: 60px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.cake:hover {
+  transform: scale(1.2);
+}
+
+.cake.cut {
+  animation: cakeCut 0.6s ease;
+}
+
+@keyframes cakeCut {
+  0% { transform: rotate(0deg) scale(1); }
+  30% { transform: rotate(-15deg) scale(1.2); }
+  60% { transform: rotate(15deg) scale(1.2); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.button-group button {
+  width: 120px;
+}
+
+/* buttons */
+button {
+  padding: 12px 20px;
+  margin: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(45deg,#ff4081,#ff6a9f);
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  width: 120px;       /* FIX: equal width */
+  text-align: center;
+}
+
+/* intro screen */
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.intro-text {
+  color: white;
+  font-size: 32px;
+  animation: fadeIn 3s ease;
+}
+
+/* popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* mobile responsive */
+@media (max-width: 500px) {
+
+  .card {
+    width: 90%;
+  }
+
+  .main-photo {
+    height: 300px;
+  }
+
+}
+
+.glow-text-below {
+
+  margin-top: 15px;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  text-align: center;
+
+  color: #ff4081;
+
+  text-shadow:
+    0 0 5px #ff4081,
+    0 0 10px #ff4081,
+    0 0 20px #ff4081,
+    0 0 40px #ff4081;
+
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+
+  from {
+    text-shadow:
+      0 0 5px #ff4081,
+      0 0 10px #ff4081;
+  }
+
+  to {
+    text-shadow:
+      0 0 20px #ff4081,
+      0 0 40px #ff4081;
+  }
+
+}
